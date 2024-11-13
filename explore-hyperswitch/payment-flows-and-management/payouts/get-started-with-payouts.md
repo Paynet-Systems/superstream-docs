@@ -4,7 +4,7 @@ icon: flag-checkered
 
 # Get started!
 
-For getting started with payouts, make sure you have signed up for the underlying payout processors supported by HyperSwitch.
+For getting started with payouts, make sure you have signed up for the underlying payout processors supported by Superstream.
 
 ## How does it work?
 
@@ -12,22 +12,18 @@ For getting started with payouts, make sure you have signed up for the underlyin
 
 ## How to get started?
 
-We will be using HyperSwitch's hosted dashboard and Postman API collection for configuring connectors and processing payouts. You can find API reference [here](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create).
-
-Backend API endpoint - https://sandbox.hyperswitch.io
-
-Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
+We will be using Superstream's hosted dashboard and Postman API collection for configuring connectors and processing payouts. You can find API reference [here](https://app.theneo.io/paynet/superstream/payouts).
 
 #### Pre-requisites
 
-* Make sure you have an account by signing up at the [dashboard](https://app.hyperswitch.io).
+* Make sure you have an account by signing up at the dashboard.
 * Log in to the dashboard
 * Make sure you have an API key by navigating to _**Developers**_ section
 * Note down your `merchant_id` from the home page.
 
 #### Steps for configuring payout processors
 
-**Step 1 -** Login to your [HyperSwitch account](https://app.hyperswitch.io).
+**Step 1 -** Login to your Superstream account.
 
 **Step 2** - Navigate to _**Payout Processors**_ tab.
 

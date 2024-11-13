@@ -11,7 +11,7 @@ This chapter will cover the payment flows available with Superstream. Please rea
 
 ## Payments 101
 
-If you're complete beginner to Digital Payments, take a look at this Payments 101blog to get familiar with terminologies.&#x20;
+If you're complete beginner to Digital Payments, take a look at this Payments 101 blog to get familiar with terminologies.&#x20;
 
 ## **Payments flow**
 

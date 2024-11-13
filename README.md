@@ -6,6 +6,7 @@ Superstream provides a modular, lightweight and full-stack solution to effortles
 * **Checkout Experience** – Seamless, fast, and intuitive checkout experience for end users, improving conversions.
 * **Payment Operations** – Simplifies management of all payment workflows and operations from a centralized dashboard.
 
+Superstream is an open-source product suite from [Toucan](https://toucanus.com), designed to simplify global payments for digital businesses. [Toucan](https://toucanus.com) has been a global leader offering payment infrastructure solution for banks and merchants for **12+ years**, processing over **175 million daily transactions** and an annualized total payment value of **$670 billion**.
 
 
 ### Explore Superstream&#x20;

@@ -1,25 +1,10 @@
 # Table of contents
 
-## About Hyperswitch
+## About Superstream
 
 * [Introduction](README.md)
-* [🛒 For online businesses](about-hyperswitch/for-online-businesses.md)
-* [🪜 For small & medium enterprises](about-hyperswitch/for-sme.md)
-* [🏢 For enterprises](about-hyperswitch/for-enterprises.md)
-* [For SaaS Businesses](about-hyperswitch/for-saas-providers.md)
-* [For B2B SaaS Businesses](about-hyperswitch/for-b2b-saas-businesses.md)
-* [For E-Commerce Businesses](about-hyperswitch/for-e-commerce-businesses.md)
-* [For Marketplace/Platforms](about-hyperswitch/for-marketplace-platforms.md)
-* [🏦 For banks & financial institutions](about-hyperswitch/for-banks-and-financial-institutions.md)
-* [Roadmap - Q4 2024](about-hyperswitch/roadmap-q3-2024/README.md)
-  * [Previous Roadmap - Q3 2024](about-hyperswitch/roadmap-q3-2024/previous-roadmap-q3-2024.md)
-  * [Previous Roadmap - Q2 2024](about-hyperswitch/roadmap-q3-2024/roadmap.md)
-  * [Previous roadmap - Q1 2024](about-hyperswitch/roadmap-q3-2024/roadmap-1.md)
-  * [Previous roadmap - Q4 2023](about-hyperswitch/roadmap-q3-2024/roadmap-1-1.md)
-
-## Hyperswitch Enterprise <a href="#hyperswitch-cloud" id="hyperswitch-cloud"></a>
-
-## Explore Hyperswitch
+* 
+## Explore Superstream
 
 * [Payment Orchestration](explore-hyperswitch/payment-flows-and-management/README.md)
   * [Accept Payments](explore-hyperswitch/payment-flows-and-management/quickstart/README.md)
@@ -31,7 +16,7 @@
     * [🥗 Payment Recipes](explore-hyperswitch/payment-flows-and-management/quickstart/payment-recipes/README.md)
       * [Use PayPal With Stripe](explore-hyperswitch/payment-flows-and-management/quickstart/payment-recipes/use-paypal-with-stripe.md)
     * [Connectors](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/README.md)
-      * [Activate connector on Hyperswitch](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/activate-connector-on-hyperswitch.md)
+      * [Activate connector on Superstream](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/activate-connector-on-hyperswitch.md)
       * [Try a Payment](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/test-a-payment-with-connector.md)
       * [Available Connectors](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/available-connectors/README.md)
         * [ACI](explore-hyperswitch/payment-flows-and-management/quickstart/connectors/available-connectors/aci.md)
@@ -160,64 +145,12 @@
   * [Data Security](explore-hyperswitch/overview/security.md)
   * [GDPR compliance](explore-hyperswitch/overview/gdpr-compliance.md)
   * [Identity and Access Management](explore-hyperswitch/overview/identity-and-access-management.md)
-* [Plugin Ecosystem](explore-hyperswitch/e-commerce-platform-plugins/README.md)
-  * [🔌 WooCommerce Plugin](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/README.md)
-    * [Setup](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/setup.md)
-    * [Roadmap](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/roadmap.md)
-    * [Compatibility](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/compatibility.md)
-    * [FAQs](explore-hyperswitch/e-commerce-platform-plugins/woocommerce-plugin/faqs.md)
-  * [Saleor App](explore-hyperswitch/e-commerce-platform-plugins/saleor-app/README.md)
-    * [Setup](explore-hyperswitch/e-commerce-platform-plugins/saleor-app/setup.md)
-  * [Automatic Tax calculation for Express Checkout wallets](explore-hyperswitch/e-commerce-platform-plugins/automatic-tax-calculation-for-express-checkout-wallets.md)
-
-## SECURITY AND COMPLIANCE
-
-## Hyperswitch open source
-
-* [Overview](hyperswitch-open-source/overview.md)
-* [Local Setup Guide](hyperswitch-open-source/local-setup-guide/README.md)
-  * [🪢 Unified Local Setup using Docker](hyperswitch-open-source/local-setup-guide/unified-local-setup-using-docker.md)
-  * [🔢 Local Setup using Individual Components](hyperswitch-open-source/local-setup-guide/local-setup-using-individual-components.md)
-* [Deploy Hyperswitch on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/README.md)
-  * [Deploy on AWS using CloudFormation](hyperswitch-open-source/deploy-hyperswitch-on-aws/deploy-on-aws-using-cloudformation.md)
-  * [Component-wise Deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/README.md)
-    * [🗄️ Deploy app server](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-app-server.md)
-    * [🎛️ Deploy Control Center](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-control-center.md)
-    * [🖥️ Deploy web client](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/README.md)
-      * [Production ready deployment](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/production-ready-deployment.md)
-      * [Integrate web client on your web app](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/integrate-web-client-on-your-web-app.md)
-      * [Playground deployment for prototyping (optional)](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-web-client/playground-deployment-for-prototyping-optional.md)
-    * [🔐 Deploy card vault](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/README.md)
-      * [Production ready deployment on AWS](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/production-ready-deployment-on-aws.md)
-      * [Cloud setup guide](hyperswitch-open-source/deploy-hyperswitch-on-aws/component-wise-deployment/deploy-card-vault/cloud-setup-guide.md)
-* [Deploy Hyperswitch on Kubernetes](hyperswitch-open-source/deploy-on-kubernetes-using-helm.md)
-* [Account setup](hyperswitch-open-source/account-setup/README.md)
-  * [🎛️ Using Hyperswitch control center](hyperswitch-open-source/account-setup/using-hyperswitch-control-center.md)
-  * [💵 Test a payment](hyperswitch-open-source/account-setup/test-a-payment.md)
-  * [🚀 Using postman](hyperswitch-open-source/account-setup/using-postman.md)
-* [Troubleshooting](hyperswitch-open-source/troubleshooting.md)
-* [Testing](hyperswitch-open-source/testing/README.md)
-  * [🩺 Test payments through Newman wrapped in Rust](hyperswitch-open-source/testing/test-payments-through-newman-wrapped-in-rust.md)
-* [Going live](hyperswitch-open-source/going-live/README.md)
-  * [👀 Monitoring](hyperswitch-open-source/going-live/monitoring.md)
-  * [🏛️ PCI compliance](hyperswitch-open-source/going-live/pci-compliance/README.md)
-    * [🍰 It's no rocket science](hyperswitch-open-source/going-live/pci-compliance/its-no-rocket-science.md)
-    * [🗒️ Completing the SAQ](hyperswitch-open-source/going-live/pci-compliance/completing-the-saq.md)
-  * [🔐 Data Security](hyperswitch-open-source/going-live/security.md)
-  * [♻️ Updates](hyperswitch-open-source/going-live/updates.md)
-  * [🗄️ On-Prem Setup](hyperswitch-open-source/going-live/on-prem-setup.md)
 
 ## Learn more
 
-* [API Reference](https://api-reference.hyperswitch.io/introduction)
-* [Connectors Supported](https://hyperswitch.io/pm-list)
-* [SDK Reference](learn-more/sdk-reference/README.md)
-  * [Node](learn-more/sdk-reference/node.md)
-  * [React](learn-more/sdk-reference/react.md)
-  * [JS](learn-more/sdk-reference/js.md)
-* [Hyperswitch architecture](learn-more/hyperswitch-architecture/README.md)
+* [API Reference](https://app.theneo.io/paynet/superstream)
+* [Superstream architecture](learn-more/hyperswitch-architecture/README.md)
   * [Router](learn-more/hyperswitch-architecture/router.md)
   * [Storage](learn-more/hyperswitch-architecture/storage.md)
   * [A Payments Switch with virtually zero overhead](learn-more/hyperswitch-architecture/a-payments-switch-with-virtually-zero-overhead.md)
 * [Payment flows](learn-more/payment-flows.md)
-* [Blog](https://hyperswitch.io/blog)

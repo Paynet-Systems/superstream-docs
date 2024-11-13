@@ -9,20 +9,20 @@ icon: file-invoice-dollar
 After reading this section, you will know about Payout features, supported processors, methods, working and how to get started with it.
 {% endhint %}
 
-Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using our automated system. Whether you're managing payments received through Hyperswitch or from other sources, leverage our infrastructure to streamline and orchestrate your payout processes efficiently.
+Effortlessly facilitate swift payouts to your global network of sellers, merchants, and service providers using our automated system. Whether you're managing payments received through Superstream or from other sources, leverage our infrastructure to streamline and orchestrate your payout processes efficiently.
 
 <figure><img src="../../../.gitbook/assets/payouts.png" alt=""><figcaption></figcaption></figure>
 
 ## Payouts combined with Payments
 
-A way of paying out third parties combined with Hyperswitch's payments processing
+A way of paying out third parties combined with Superstream's payments processing
 
 *   **Supercharge Conversions**
 
     * Effortlessly send funds to bank accounts or cards using your preferred method
     * Boost success with smart retries.
 
-    _Hyperswitch currently supports Adyen and Wise_
+    _Superstream currently supports Adyen and Wise_
 * **Simplify Operations**
   * All-in-One View: Monitor all payouts across partners in a single dashboard view
   * Bulk Payouts (submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests)): Manage large-scale payouts via simple file (.xlsx/.csv) uploads
@@ -85,6 +85,6 @@ Business continuity with compatibility ensured for your Stripe connect onboarded
 
 ## FAQs?
 
-* **Can I use Hyperswitch solely for payouts without payments?** Absolutely. You can payout with embedded payments or directly to a third party by providing direct payment info or token ID.
-* **What does "independent tokenization" mean?** Independent tokenization means that your card and bank data are converted into a secure token, irrespective of which payment processor you use, with Hyperswitch. (We tokenize only when the user permits us to save their card/bank info)
+* **Can I use Superstream solely for payouts without payments?** Absolutely. You can payout with embedded payments or directly to a third party by providing direct payment info or token ID.
+* **What does "independent tokenization" mean?** Independent tokenization means that your card and bank data are converted into a secure token, irrespective of which payment processor you use, with Superstream. (We tokenize only when the user permits us to save their card/bank info)
 

@@ -9,7 +9,7 @@ icon: shield-check
 With this section you will get a good understanding of FRM, it's need, use cases, architecture and steps to integrate it in your system.
 {% endhint %}
 
-The Hyperswitch Fraud and Risk Management (FRM) platform offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.
+The Superstream Fraud and Risk Management (FRM) platform offers a comprehensive Unified API designed to cater to your specific payment validation needs, effectively enhancing fraud protection within your payment ecosystem.
 
 ## Benefits
 
@@ -28,7 +28,7 @@ Below are few sample FRM use cases
 
 ## Overview
 
-You can enable the FRM solution of your choice with few clicks and very minimal code changes. Below are the two scenarios in which FRM can be activated through Hyperswitch.
+You can enable the FRM solution of your choice with few clicks and very minimal code changes. Below are the two scenarios in which FRM can be activated through Superstream.
 
 ## Prerequisite
 
@@ -78,14 +78,14 @@ FRM connectors generally provide a decision based on rules / data models along w
 * **Decisions/recommendations**: Uses ML data models for predicting and recommending the outcome
 * **Chargeback guarantee**: Uses ML data models for responding with a binary outcome (Accept vs Decline)
 
-Currently, HyperSwitch offers only a single way of integrating with the underlying FRM connector.
+Currently, Superstream offers only a single way of integrating with the underlying FRM connector.
 
 * **Signifyd** : Decision/Recommendation
 * **Riskified** : chargeback guarantee
 
 ## How to get started?
 
-**Step 1:** Log in to your [Hyperswitch account](https://app.hyperswitch.io/login).
+**Step 1:** Log in to your Superstream account.
 
 <figure><img src="../../../.gitbook/assets/frm-step1.png" alt=""><figcaption></figcaption></figure>
 
@@ -109,5 +109,5 @@ Currently, HyperSwitch offers only a single way of integrating with the underlyi
 
 ## FAQs
 
-* **What are the prerequisites for integrating with the Hyperswitch FRM platform?** Depending on the FRM processor of your choice, you may need to pass additional parameters regarding order fullfilment as a webhook to Hyperswitch. Please refer to the section here for more details.
-* **Can I adjust my fraud prevention measures based on specific payment methods and connectors?** Yes, the Hyperswitch FRM platform allows you to customize your fraud prevention measures by selecting between pre-authorization and post-authorization checks for each payment method for a processor and the corresponding action to be taken.
+* **What are the prerequisites for integrating with the Superstream FRM platform?** Depending on the FRM processor of your choice, you may need to pass additional parameters regarding order fullfilment as a webhook to Superstream. Please refer to the section here for more details.
+* **Can I adjust my fraud prevention measures based on specific payment methods and connectors?** Yes, the Superstream FRM platform allows you to customize your fraud prevention measures by selecting between pre-authorization and post-authorization checks for each payment method for a processor and the corresponding action to be taken.

@@ -9,7 +9,7 @@ icon: magnifying-glass-arrows-rotate
 This section covers how smart retries function, the supported payment processors, and how to enable it.
 {% endhint %}
 
-Smart retry is a Hyperswitch feature to improve the payment success rates in a multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with an alternative payment processor to increase the chances of making the payment successful.
+Smart retry is a Superstream feature to improve the payment success rates in a multi-processor setup. If the payment fails through the primary processor due to specific reasons, the payment will be retried with an alternative payment processor to increase the chances of making the payment successful.
 
 There are two possible types of payment retry flows:
 
@@ -21,11 +21,11 @@ There are two possible types of payment retry flows:
 
 **User Consent-based Retries:** These retries are applicable for payment flows that need an additional level of user authentication (example: Apple Pay, Google Pay, 3DS cards, bank transfers).Such payment flows need an additional authentication from the user. Hence smart retries are not possible for such scenarios.
 
-**Note:** Currently, Hyperswitch supports Smart retries as an out-of-the-box capability. In order to enable user consent based retry for payment failures, you can create a fresh payment and re-trigger the Hyperswitch checkout.
+**Note:** Currently, Superstream supports Smart retries as an out-of-the-box capability. In order to enable user consent based retry for payment failures, you can create a fresh payment and re-trigger the Superstream checkout.
 
 ## Supported Payment processors
 
-Hyperswitch supports the following primary processors for automatic retries.
+Superstream supports the following primary processors for automatic retries.
 
 * Stripe
 * Bluesnap
@@ -38,7 +38,7 @@ In case you wish more primary processors to be covered for automatic retry, plea
 
 Smart retry will be attempted whenever the payment fails through the Primary Processor for card transactions.
 
-Primary processor is a first choice of payment processor for the particular transaction. This is evaluated based on the smart routing rules configured in the Hyperswitch dashboard’s routing module.
+Primary processor is a first choice of payment processor for the particular transaction. This is evaluated based on the smart routing rules configured in the Superstream dashboard’s routing module.
 
 The flow looks like below.
 
@@ -46,11 +46,11 @@ The flow looks like below.
 
 ## How to enable Smart Retries?
 
-**Step 1:** Ensure that you have enabled the pecking order of payment processors on the Hyperswitch dashboard. You can access the settings from Routing > Default fallback > Manage.
+**Step 1:** Ensure that you have enabled the pecking order of payment processors on the Superstream dashboard. You can access the settings from Routing > Default fallback > Manage.
 
 <figure><img src="../../../.gitbook/assets/smartretry-1 (2).png" alt=""><figcaption></figcaption></figure>
 
-**Step 2:** Drop a request to biz@hyperswitch.io with the below information.
+**Step 2:** Drop a request to biz@Superstream.io with the below information.
 
 * Confirmation to enable automatic retry
 * Maximum number of payment retry attempts (It is recommended to start with 1 retry attempt. However we can support more retry attempts based on the number of processors)
@@ -59,15 +59,15 @@ The flow looks like below.
 
 ### What is a primary processor?
 
-Primary processor is the first choice of processor for the particular transaction to be processed. This is evaluated based on the smart routing rules configured in the Hyperswitch dashboard’s routing module.
+Primary processor is the first choice of processor for the particular transaction to be processed. This is evaluated based on the smart routing rules configured in the Superstream dashboard’s routing module.
 
-### Why can I not enable Automatic Retry from the Hyperswitch dashboard?
+### Why can I not enable Automatic Retry from the Superstream dashboard?
 
-For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Hyperswitch and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (hyperswitch@juspay.in).
+For reconciliation purposes, some merchants prefer having the same payment\_id being passed to both Superstream and the Payment Processors. Smart retry would not be feasible if such a use case exists. Hence, Smart retry is as an additional configuration that can be enabled only by contacting our support (Superstream@juspay.in).
 
-Since Smart retry involves multiple payment attempts for a single payment\_id, Hyperswitch appends the attempt number to the payment\_id that the merchant sends to Hyperswitch before passing it on to the processors.
+Since Smart retry involves multiple payment attempts for a single payment\_id, Superstream appends the attempt number to the payment\_id that the merchant sends to Superstream before passing it on to the processors.
 
-For example, if the merchant had sent pay\_abcd145efg, then Hyperswitch will send the following payment\_id to the processors during each attempt:
+For example, if the merchant had sent pay\_abcd145efg, then Superstream will send the following payment\_id to the processors during each attempt:
 
 * Payment attempt 1: pay\_abcd145efg\_1
 * Payment attempt 2: pay\_abcd145efg\_2

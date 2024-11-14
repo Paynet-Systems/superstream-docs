@@ -10,41 +10,7 @@ icon: up-right-from-square
 
 Up until now, merchants relied on the payment processors to complete the authentication and authorization. But it comes with its own challenges like Poor data availability and customer experience.
 
-To help merchants these issues, Hyperswitch allows them to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts.
-
-## How to setup External 3DS authentication via Hyperswitch?
-
-We will be using HyperSwitch's hosted dashboard and Postman API collection for configuring connectors and processing payouts. You can find API reference [here](https://api-reference.hyperswitch.io/api-reference/payments/payments--external-3ds-authentication).
-
-Backend API endpoint - https://sandbox.hyperswitch.io
-
-Dashboard - [https://app.hyperswitch.io](https://app.hyperswitch.io)
-
-{% hint style="info" %}
-The below tutorial enable you to set-up External 3DS authentication for both, Website and Mobiles apps.
-{% endhint %}
-
-### Pre-requisites
-
-* Setup 3DS Authenticator&#x20;
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.27.58 PM.png" alt=""><figcaption><p>Add new 3DS authenticator</p></figcaption></figure>
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.28.59 PM.png" alt=""><figcaption><p>Add credentials for 3DS authenticator</p></figcaption></figure>
-
-* Setup payment processor
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.31.16 PM.png" alt=""><figcaption><p>Add new payment processors</p></figcaption></figure>
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.33.02 PM.png" alt=""><figcaption><p>Add credentials for payment processor</p></figcaption></figure>
-
-* Go to Developers -> Payment Settings -> Choose default setting and add Authentication Connectors
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-05-09 at 3.36.36 PM.png" alt=""><figcaption><p>Add required urls and set the authentication connector</p></figcaption></figure>
-
-* Create/Collect your API key and Publishable key
-
-You are done with the setup!
+To help merchants these issues, Superstream allows them to integrate external 3DS authenticators like Netcetera and 3dsecure.io with minimal development efforts.
 
 ### How to do external authentication?
 
@@ -53,7 +19,7 @@ You are done with the setup!
 Do a create payment call to initiate the transaction. The status of the response should be 'requres\_customer\_action" and should contain the "next\_action" object.
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/payments' \
+curl --location 'https://sandbox.superstream.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: {{api_key}}' \
@@ -142,7 +108,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 Initiate the authentication with the client\_secret generated
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/payments/pay_xXr8btC2depRWfVYKmNt/3ds/authentication' \
+curl --location 'https://sandbox.superstream.io/payments/pay_xXr8btC2depRWfVYKmNt/3ds/authentication' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: {{api_key}}' \
@@ -160,6 +126,6 @@ After the challenge is completed, the status should go to 'succeeded' status
 {% endhint %}
 
 {% hint style="success" %}
-Being a payments product, Hyperswitch is always up to date with the latest regulations globally. On that front, the merchants need not worry about compliance. For merchants who want to integrate the latest authentication products to offer a frictionless payment flow to their customers, but also enjoy the liability shift, Hyperswitch has got you covered. Products like Digital Authentication Framework (DAF), Delegated Authentication (DA), Secure Payment Confirmation (SPC), Click to Pay (CTP), etc. are in our roadmap. Check out the product on sandbox or get in touch with us for more information.
+Being a payments product, Superstream is always up to date with the latest regulations globally. On that front, the merchants need not worry about compliance. For merchants who want to integrate the latest authentication products to offer a frictionless payment flow to their customers, but also enjoy the liability shift, Superstream has got you covered. Products like Digital Authentication Framework (DAF), Delegated Authentication (DA), Secure Payment Confirmation (SPC), Click to Pay (CTP), etc. are in our roadmap. Check out the product on sandbox or get in touch with us for more information.
 {% endhint %}
 

@@ -32,7 +32,7 @@ Should the need arise, merchants can selectively unblock specific fingerprints, 
 
 In summary, a blocklist feature empowers merchants to proactively manage the security of their payment processing systems by blocking specific fingerprints, card bins, or extended card bins. This not only safeguards against potential fraud but also provides a customizable and flexible approach to control and monitor payment transactions effectively.
 
-## How does Blocklist work at Hyperswitch?
+## How does Blocklist work at Superstream?
 
 Currently we support blocking three types of resources i.e. card numbers (payment instrument), card bin, and extended card bin. A prerequisite to use this feature is to enable it using the /blocklist API as mentioned below.
 
@@ -53,16 +53,16 @@ Currently we support blocking three types of resources i.e. card numbers (paymen
     block the card.
 * Try the payment again (should fail)
 
-## How to enable Blocklist Guard on Hyperswitch?
+## How to enable Blocklist Guard on Superstream?
 
 ```
 curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 --header 'api-key: dev_xxxxxxxxxxxxxxxx'
 ```
 
-## How to configure Blocklist on Hyperswitch using API?
+## How to configure Blocklist on Superstream using API?
 
-1. Create and confirm a card payment through Hyperswitch by passing raw card details
+1. Create and confirm a card payment through Superstream by passing raw card details
 
 ```
 {
@@ -96,7 +96,7 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 
 ```
 
-2. Make note of the "fingerprint" field from payments/confirm response which is the unique fingerprint for a card passed to Hyperswitch:
+2. Make note of the "fingerprint" field from payments/confirm response which is the unique fingerprint for a card passed to Superstream:
 
 ```markup
 {
@@ -131,10 +131,10 @@ curl --location --request POST '{{base_url}}/blocklist/toggle?status=true' \
 }
 ```
 
-3. Block a fingerprint using the [Blocklist endpoint](https://api-reference.hyperswitch.io/api-reference/blocklist/post-blocklist):
+3. Block a fingerprint using the [Blocklist endpoint](https://app.theneo.io/paynet/superstream/blocklist/block-a-fingerprint):
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/blocklist' \
+curl --location 'https://sandbox.superstream.io/blocklist' \
 --header 'Content-Type: application/json' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
@@ -143,10 +143,10 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 }
 ```
 
-4. [Show Blocked fingerprints](https://api-reference.hyperswitch.io/api-reference/blocklist/get-blocklist)
+4. [Show Blocked fingerprints](https://app.theneo.io/paynet/superstream/blocklist/list-blocked-fingerprints-of-a-particular-kind)
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_method' \
+curl --location 'https://sandbox.superstream.io/blocklist?data_kind=payment_method' \
 --header 'api-key: YOUR_API_KEY'
 ```
 
@@ -160,10 +160,10 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist?data_kind=payment_meth
    }
 ```
 
-6. [Unblock a fingerprint](https://api-reference.hyperswitch.io/api-reference/blocklist/delete-blocklist)
+6. [Unblock a fingerprint](https://app.theneo.io/paynet/superstream/blocklist/unblock-a-fingerprint)
 
 ```
-curl --location --request DELETE 'https://sandbox.hyperswitch.io/blocklist' \
+curl --location --request DELETE 'https://sandbox.superstream.io/blocklist' \
 --header 'Content-Type: application/json' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
@@ -175,7 +175,7 @@ curl --location --request DELETE 'https://sandbox.hyperswitch.io/blocklist' \
 7. Block a Card BIN/ISIN (First 6 digits)
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/blocklist' \
+curl --location 'https://sandbox.superstream.io/blocklist' \
 --header 'Content-Type: application/json' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{
@@ -187,7 +187,7 @@ curl --location 'https://sandbox.hyperswitch.io/blocklist' \
 8. Block an ExtendedCardBin (First 8 digits)
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/blocklist' \
+curl --location 'https://sandbox.superstream.io/blocklist' \
 --header 'Content-Type: application/json' \
 --header 'api-key: YOUR_API_KEY' \
 --data '{

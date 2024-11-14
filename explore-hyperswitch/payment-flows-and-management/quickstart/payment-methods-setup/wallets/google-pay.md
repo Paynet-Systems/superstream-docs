@@ -10,16 +10,16 @@ Google Pay has additional layers of security embedded in its payment flow and he
 
 ## **Prerequisites**
 
-There are few prerequisites that need to be fulfilled before integrating Google Pay on Hyperswitch -
+There are few prerequisites that need to be fulfilled before integrating Google Pay on Superstream -
 
 1. Configure Google Pay on your processor's dashboard
 2. In order to test Google Pay integration you will need to add test cards to your google account. You can go to [Google Pay API Test Cards Allowlist](https://groups.google.com/g/googlepay-test-mode-stub-data?pli=1) and click on Join Group to automatically add test cards in your Google Developer Account
 
-## **Configuring Google Pay on Hyperswitch**
+## **Configuring Google Pay on Superstream**
 
-To configure Google Pay on Hyperswitch follow the steps given below -
+To configure Google Pay on Superstream follow the steps given below -
 
-1. Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)
+1. Login to Superstream dashboard
 2. In the Connectors tab, select your processor
 3. While selecting Payment Methods, click on Google Pay in the Wallet section
 4. Use this [link](https://developers.google.com/pay/api/web/guides/tutorial#tokenization) to search for your processor's input parameters. Get those parameters from the processor dashboard and configure them in Google Pay Merchant Key

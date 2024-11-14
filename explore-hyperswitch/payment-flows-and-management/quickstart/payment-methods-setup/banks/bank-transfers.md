@@ -15,12 +15,12 @@ Bank Transfers are a popular way of transmitting money between different bank ac
 **Payment flow in Bank Transfers:**
 
 1. Customers select a Bank Transfer method on your checkout page
-2. You request Hyperswitch to initiate a Bank Transfer payment
-3. Hyperswitch connects to one of your preferred payment processors for Bank transfers to initiate Bank transfer. Then, Hyperswitch shares the processor’s response which contains Virtual bank account details and instructions for the customers to transfer money and complete the payment
+2. You request Superstream to initiate a Bank Transfer payment
+3. Superstream connects to one of your preferred payment processors for Bank transfers to initiate Bank transfer. Then, Superstream shares the processor’s response which contains Virtual bank account details and instructions for the customers to transfer money and complete the payment
 4. Customers instruct their bank through in-person visit/phone/website/app to transfer money to the account number mentioned in the instructions in the above step. It takes up to 5 days for the transaction to be settled
-5. After the customer’s bank transfers the money, the processor notifies Hyperswitch of the transaction’s status, following which Hyperswitch notifies your server through Webhooks.
+5. After the customer’s bank transfers the money, the processor notifies Superstream of the transaction’s status, following which Superstream notifies your server through Webhooks.
 
-Hyperswitch supports the following Bank Transfers:
+Superstream supports the following Bank Transfers:
 
 * ACH Bank Transfer in US
 * SEPA Bank Transfer in EU

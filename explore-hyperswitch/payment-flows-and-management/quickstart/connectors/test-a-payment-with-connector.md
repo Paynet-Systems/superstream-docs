@@ -1,24 +1,24 @@
 ---
-description: Make test payments through preferred connector via Hyperswitch
+description: Make test payments through preferred connector via Superstream
 icon: vial-circle-check
 ---
 
 # Try a Payment
 
 {% hint style="info" %}
-This section gives you an overview of how to make test payments via Hyperswitch.
+This section gives you an overview of how to make test payments via Superstream.
 {% endhint %}
 
 ## Test the Configuration using Dashboard
 
-1. Upon configuration of the Connector, navigate to the dashboard [home page](https://app.hyperswitch.io/home)
+1. Upon configuration of the Connector, navigate to the dashboard home page.
 2. Proceed with the "Try a test payment" option on the home page of the dashboard
 3. Setup your demo checkout page by providing Business profile, Profile Id, Currency and Amount
 4. Click on Show Preview, Your demo checkout page will be visible at preview section
-5. Choose the desired payment method in the demo page, Please find the test payment instrument data [here](test-a-payment-with-connector.md#test-credentials)
+5. Choose the desired payment method in the demo page.
 6. Click on Pay and you will get a Success message&#x20;
-7. Validate transaction on Hyperswitch dashboard. \
-   \- Goto the left pane on the Hyperswitch dashboard \
+7. Validate transaction on Superstream dashboard. \
+   \- Goto the left pane on the Superstream dashboard \
    \- Click on Operations -> Payments \
    \- Your transactions should be visible under the order management tab
 

@@ -6,9 +6,9 @@ description: Enable Apple pay on your iOS app
 
 ## **Prerequisites**
 
-Before beginning to integrate Apple Pay with Hyperswitch, below prerequisites need to be fulfilled. _Please feel free to reach out to Hyperswitch support if you are stuck at any stage when integrating and testing Apple Pay._
+Before beginning to integrate Apple Pay with Superstream, below prerequisites need to be fulfilled. _Please feel free to reach out to Superstream support if you are stuck at any stage when integrating and testing Apple Pay._
 
-1. Apple Pay requires an Apple Developer Account. You can [Sign Up](https://developer.apple.com/programs/enroll/) for one here.
+1. Apple Pay requires an Apple Developer Account.
 2. You must have a valid SSL certificate on your domain _(meaning it begins with **https**)_
 
 Apple Pay requires additional steps, and requires macOS 10.12.1+ or iOS 10.1+. Follow the steps given below to setting up Apple Pay -
@@ -35,8 +35,6 @@ You can validate the merchant domain by following the steps mentioned below -
 * Once you host the .txt file in the path mentioned above, click on Verify
 * Make sure the status is verified as shown in the following image
 
-<figure><img src="../../../../../../.gitbook/assets/image_720.png" alt=""><figcaption></figcaption></figure>
-
 ## **Creating Apple MerchantID Certificate and Private Key**
 
 You can create an Apple MerchantID certificate and private key by following the steps mentioned below -
@@ -60,16 +58,14 @@ openssl req -out uploadMe.csr -new -newkey rsa:2048 -nodes -keyout certificate_s
 openssl x509 -inform der -in merchant_id.cer -out certificate_sandbox.pem
 ```
 
-## **Configuring Apple Pay on Hyperswitch**
+## **Configuring Apple Pay on Superstream**
 
-You can configure Apple Pay on Hyperswitch by following the steps mentioned below -
+You can configure Apple Pay on Superstream by following the steps mentioned below -
 
-* Login to [Hyperswitch dashboard](https://app.hyperswitch.io/)
+* Login to Superstream dashboard.
 * In the Connectors tab, select your processor
 * While selecting Payment Methods, click on Apple Pay in the Wallet section
 * Select the iOS Certificate option
-
-<figure><img src="../../../../../../.gitbook/assets/Screenshot 2023-12-07 at 7.40.48 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
 * In Apple Merchant Identifier, add your identifier which you added while creating Apple MerchantID
 * In Merchant Certificate, **base64 encode** the entire content of your **.pem** file _(it will be **certificate\_sandbox.pem**, if you used the exact command mentioned above)_, and enter the encoded data in the form field. Use the below command to base64 encode it.
@@ -88,16 +84,11 @@ base64 -i certificate_sandbox.key
 * In Domain, enter `web` in the form field.
 * In Domain Name, add the verified domain name you configured in Merchant Domains in Apple Developer Account.
 
-<figure><img src="../../../../../../.gitbook/assets/Screenshot 2024-08-06 at 6.56.28 PM.png" alt="" width="563"><figcaption></figcaption></figure>
-
 ## **Creating Apple Pay Payment Processing Certificate**
 
 {% tabs %}
 {% tab title="Payment Processing Details At Connector" %}
 \
-
-
-<figure><img src="../../../../../../.gitbook/assets/payment_processing_details_at_connector.png" alt=""><figcaption></figcaption></figure>
 
 * You will need to get a **.csr** file from your processor's dashboard, _(like Adyen, Cybersource)_
 * Log in to your [Apple Developer account](https://developer.apple.com/account/resources/certificates/list), go to Identifiers and select the Merchant ID you created previously
@@ -111,11 +102,7 @@ This final step is specific to the processor being used and is not necessary in 
 {% endhint %}
 {% endtab %}
 
-{% tab title="Payment Processing Details At Hyperswitch" %}
-\
-
-
-<figure><img src="../../../../../../.gitbook/assets/payment_processing_details_at_hyperswitch.png" alt=""><figcaption></figcaption></figure>
+{% tab title="Payment Processing Details At Superstream" %}
 
 You can create an Apple Payment Processing Certificate and Payment Processing Key by following the steps mentioned below
 
@@ -144,20 +131,18 @@ base64 -i apple_pay.cer
 
 * In Payment Processing Key, copy the content from **ppc\_private.key** file and paste it.
 
-<figure><img src="../../../../../../Users/shankar.singh/Documents/hyperswitch-docs/.gitbook/assets/Screenshot%202024-08-06%20at%207.52.16%E2%80%AFPM.png" alt=""><figcaption></figcaption></figure>
-
 {% hint style="warning" %}
-Please note since this flow involves decryption at Hyperswitch, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
+Please note since this flow involves decryption at Superstream, you may need to write to your payment processor to get this feature enabled for your account. Stripe is one among them.
 {% endhint %}
 
 <details>
 
 <summary>You can use the following text in the email</summary>
 
-* Attach our PCI DSS AoC certificate and copy our Support team (biz@hyperswitch.io).
+* Attach our PCI DSS AoC certificate and copy our Support team (biz@Superstream.io).
 * Stripe Account id: <`Enter your account id:` you can find it [here](https://dashboard.stripe.com/settings/user)>
 * A detailed business description: <`One sentence about your business`>. The business operates across `xx` countries and has customers across the world.
-* Feature Request: We are using Hyperswitch, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Hyperswitch’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Hyperswitch’s PCI DSS AoC for reference.
+* Feature Request: We are using Superstream, a Level 1 PCI DSS 3.2.1 compliant Payments Orchestrator, to manage payments on our website. In addition to Stripe, since we are using other processors as well to process payments across multiple geographies, we wanted to use Superstream’s Payment Processing certificate to decrypt Apple pay tokens and send the decrypted Apple pay tokens to Stripe. So, please enable processing decrypted Apple pay token feature on our Stripe account. We’ve attached Superstream’s PCI DSS AoC for reference.
 
 </details>
 {% endtab %}
@@ -166,5 +151,3 @@ Please note since this flow involves decryption at Hyperswitch, you may need to 
 ## Integrate with Xcode
 
 Add the Apple Pay capability to your app. In Xcode, open your project settings, click the Signing & Capabilities tab, and add the Apple Pay capability. You might be prompted to log in to your developer account at this point. Select the merchant ID you created earlier, and your app is ready to accept Apple Pay.
-
-<figure><img src="../../../../../../.gitbook/assets/applepay.png" alt=""><figcaption><p>Enable the Apple Pay capability in Xcode</p></figcaption></figure>

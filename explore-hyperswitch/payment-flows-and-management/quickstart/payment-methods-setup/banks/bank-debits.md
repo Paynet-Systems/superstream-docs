@@ -31,7 +31,7 @@ d. The merchant can opt for microdeposits (only on Stripe) or allow the customer
 | BACS                | UK                               | GBP                      |
 | BECS                | Australia                        | AUD                      |
 
-Hyperswitch currently supports the following Bank Direct Debits:
+Superstream currently supports the following Bank Direct Debits:
 
 ### ACH
 

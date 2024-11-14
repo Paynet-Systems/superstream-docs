@@ -32,8 +32,6 @@ Superstream supports the following primary processors for automatic retries.
 * Checkout.com
 * Trustpay
 
-In case you wish more primary processors to be covered for automatic retry, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
-
 ## How does it work?
 
 Smart retry will be attempted whenever the payment fails through the Primary Processor for card transactions.

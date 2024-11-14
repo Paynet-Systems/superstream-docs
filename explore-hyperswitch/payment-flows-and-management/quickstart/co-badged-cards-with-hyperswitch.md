@@ -2,7 +2,7 @@
 icon: credit-card
 ---
 
-# Co-badged Cards with Hyperswitch
+# Co-badged Cards with Superstream
 
 Co-badged cards are credit or debit cards issued by banks that integrate two or more payment networks. These cards carry the logos of both a local network (e.g., MADA, CB, Dankort, eftpos) and a global network (e.g., Visa, Mastercard).&#x20;
 
@@ -14,17 +14,19 @@ Customers benefit from the global scope, security, and consumer protection of in
 
 * Increased Payment Flexibility: Merchants can offer customers the ability to select their preferred network, optimizing the payment experience and accommodating different payment preferences.
 * Better Dispute Resolution: In many cases, for high-value items, global networks like Visa and Mastercard provide better consumer protection and dispute resolution. Customers can choose these for international transactions, while using local networks for domestic purchases.
-* Compliance with Global Standards: Co-badged cards support local regulations, such as Article 8 of the [Interchange Fee Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R0751) (IFR) issued by the European Union, ensuring full compliance while maintaining flexibility for merchants outside the EEA.
+* Compliance with Global Standards: Co-badged cards support local regulations, such as Article 8 of the Interchange Fee Regulation (IFR) issued by the European Union, ensuring full compliance while maintaining flexibility for merchants outside the EEA.
 
-## How to enable support for Co-badged cards with Hyperswitch?
+## How to enable support for Co-badged cards with Superstream?
 
 To enable this, you only need to select all the card networks you support in the dashboard during the payment method selection step while configuring the payment processors. Follow the steps shown below to enable it.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfPduE2_wvZBZ7QgbiLygL26GGZNLw-cKVW1egGzBhr2yhZgX9LV00nZ_0RMPDlBlhPyCiXjISA3lBICyj3npvU-G1_RLnfUOVMQdad3QD6OSMSzKHfLpddstR5o_N_QEMohpcIwBJusMS7byt5qhiVDtmd?key=cqdjEpZuvzmudtMKqZ5fuw" alt=""><figcaption></figcaption></figure>
+**Step 1:** Login into dashboard and navigate to the Connectors section >> Payment processors.
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeE7RC8Xyyp5OKRX63yML5-6furutp_oV4vckflcPqVwSwbWY2zoVcy2Kuwegj69d-9zhfjXSZLrbde7kNeLLa51eJDzU4eHfcYBGw-5Gar2ud6vM2I2C4qxtkZ8NF_tJOEoihkDEIDUCr_uRszPL43GX4P?key=cqdjEpZuvzmudtMKqZ5fuw" alt=""><figcaption></figcaption></figure>
+**Step 2:** Choose the connector&#x20;
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfnJ4MKRmiV4Qrp28ofV_tUVb5YwBE8Lb2LWSm42GUIr3UKfD7f7Lqvn4ID2worjh8GhiSb5wJZz9Di25NXGTWIV27brvSsCve692TXVjdJooo-FWFSU309BQfC3YW2CAQjj4t-N1_ocvlSiq8eTvT3Nmi7?key=cqdjEpZuvzmudtMKqZ5fuw" alt=""><figcaption></figcaption></figure>
+**Step 3:** Proceed by entering Connector Credential and clicking Connect and proceed.
+
+**Step 4:** Configure what all cards you want to support&#x20;
 
 ## FAQs
 

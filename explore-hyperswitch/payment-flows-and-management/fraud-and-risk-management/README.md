@@ -67,8 +67,6 @@ In the PostAuth flow, the FRM solution is called into action after the authoriza
 | -------------------- | ------------------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | Signifyd / Riskified | <ul><li>PreAuth</li><li>PostAuth</li></ul> | <ul><li>Cancel Transactions</li><li>Flag for Manual Review</li></ul> | <ul><li>Guaranteed Fraud Protection</li><li>Complete Chargeback Protection</li><li>Auth Rate Conversions</li></ul> |
 
-If your FRM processor of choice is not available in the above list, please put a new features request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
-
 ## FRM status and decisions
 
 FRM connectors generally provide a decision based on rules / data models along with a risk score associated with the transaction. Some integrations require providing the model to be used explicitly. For example, Signifyd can be configured to respond with only scores, or decision + scores, etc. Fraud detection can be done via below methods
@@ -87,25 +85,13 @@ Currently, Superstream offers only a single way of integrating with the underlyi
 
 **Step 1:** Log in to your Superstream account.
 
-<figure><img src="../../../.gitbook/assets/frm-step1.png" alt=""><figcaption></figcaption></figure>
-
 **Step 2:** Navigate to the 'Fraud & Risk' tab and select the FRM processor you want to integrate.
-
-<figure><img src="../../../features/merchant-controls/broken-reference" alt=""><figcaption></figcaption></figure>
 
 **Step 3:** Configure payment methods and preferred actions for the enabled payment methods.
 
-<figure><img src="../../../features/merchant-controls/broken-reference" alt=""><figcaption></figcaption></figure>
-
 **Step 4:** Provide API credentials for the FRM processor.
 
-<figure><img src="../../../features/merchant-controls/broken-reference" alt=""><figcaption></figcaption></figure>
-
-**Step 5:** Once set up, head to the [API Docs](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) to integrate the FRM API and start testing payments with fraud checks.
-
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
-{% endcontent-ref %}
+**Step 5:** Once set up, head to the [API Docs](https://app.theneo.io/paynet/superstream) to integrate the FRM API and start testing payments with fraud checks.
 
 ## FAQs
 

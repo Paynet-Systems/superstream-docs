@@ -35,19 +35,10 @@ Superstream Smart Router Engine evaluates every payment request against your pre
 
 ## How to configure the Smart Router?
 
-Superstream dashboard provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Superstream currently supports.\
-\
+Superstream dashboard provides a simple, intuitive UI to configure multiple Routing rules on your dashboard under the **Routing** tab. There are three routing rule formats that Superstream currently supports.
 
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Rule Based Routing</strong></td><td></td><td></td><td><a href="rule-based-routing.md">rule-based-routing.md</a></td><td><a href="../../../.gitbook/assets/rule-based.png">rule-based.png</a></td></tr><tr><td><strong>Volume Based Routing</strong></td><td></td><td></td><td><a href="volume-based-routing.md">volume-based-routing.md</a></td><td><a href="../../../.gitbook/assets/volume-based.png">volume-based.png</a></td></tr><tr><td><strong>Default Fallback Routing</strong></td><td></td><td></td><td><a href="default-fallback-routing.md">default-fallback-routing.md</a></td><td><a href="../../../.gitbook/assets/default.png">default.png</a></td></tr></tbody></table>
-
-## Next step&#x20;
-
-To test the Smart Router, after activating one rule, we can make a Test Payment using the Superstream Dashboard.
-
-{% content-ref url="../../../hyperswitch-open-source/account-setup/test-a-payment.md" %}
-[test-a-payment.md](../../../hyperswitch-open-source/account-setup/test-a-payment.md)
-{% endcontent-ref %}
 
 <details>
 

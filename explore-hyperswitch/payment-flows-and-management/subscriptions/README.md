@@ -24,8 +24,6 @@ Superstream allows you to work with your preferred subscription provider while h
 
 All major Subscription Solution Providers offer integration points to manage payments with external payment processors. And the integration solution proposed below should work universal across any subscription provider.
 
-We also support [Kill Bill](https://killbill.io/) (an open source subscription solution provider) via a direct Plugin.
-
 ### Use cases supported
 
 * User flow 1 - User selects a plan followed by selecting the payment method and adding the payment method details to make the payment and start subscription.&#x20;

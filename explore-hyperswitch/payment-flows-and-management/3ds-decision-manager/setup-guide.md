@@ -30,11 +30,13 @@ This section covers the steps to setup 3ds decision manager using the Superstrea
 ### FAQs
 <details>
 <summary>What are some of the payment parameters that I can use to configure 3DS rules?</summary>
-* **amount** - Set rules for a specific value or a range of values for the transaction amount.
-* **currency** - Select the currency of the transaction.
-* **card_type** - Choose between credit and debit cards.
-* **card_network** - Choose between card networks like Visa, Mastercard, etc.
-* **billing_country** - Select the billing country.
+
+* **Amount** - Set rules for a specific value or a range of values for the transaction amount.
+* **Currency** - Select the currency of the transaction.
+* **Card Type** - Choose between credit and debit cards.
+* **Card Network** - Choose between card networks like Visa, Mastercard, etc.
+* **Billing Country** - Select the billing country.
+
 </details>
 
 <details>

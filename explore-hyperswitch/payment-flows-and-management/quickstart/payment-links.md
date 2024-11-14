@@ -7,7 +7,7 @@ icon: link
 
 > This feature is still under development. We will update this section, as soon as it is live.
 
-Introducing Payment Links – Seamlessly integrate into Hyperswitch without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
+Introducing Payment Links – Seamlessly integrate into Superstream without writing much code. This feature allows you to generate secure and personalised payment links, enabling swift and hassle-free transactions for your customers. Elevate your payment experience with the efficiency and flexibility of Payment Links, streamlining the way you conduct business transactions.
 
 ### Use cases for Payment links
 
@@ -21,22 +21,18 @@ Introducing Payment Links – Seamlessly integrate into Hyperswitch without writ
 * Substitute for Cash-on-delivery and point-of-sale
 * Streamlining over-the-phone transactions
 
-{% embed url="https://www.youtube.com/watch?v=8SGyP3kIpQo" %}
-API Level Overview of Payment Links with Hyperswitch
-{% endembed %}
-
-### How to configure Payment links through Hyperswitch API?
+### How to configure Payment links through Superstream API?
 
 #### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../account-management/multiple-accounts-and-profiles/))
+* Create a Superstream account via the dashboard and create a profile.
 * Add a payment processor to you account
 
 #### Using Payment links
 
 > > Note: Domain name might vary based on the testing and production environment.
 
-#### 1. Update [business profile ](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update)with a default payment\_link\_config by passing the below object in the request body
+#### 1. Update business profile with a default payment\_link\_config by passing the below object in the request body
 
 {% code fullWidth="true" %}
 ```
@@ -50,14 +46,14 @@ API Level Overview of Payment Links with Hyperswitch
 ```
 {% endcode %}
 
-#### 2. [Create a payment link ](https://api-reference.hyperswitch.io/api-reference/payments/payments--create)by using the same payments/create endpoint
+#### 2. Create a payment link by using the same payments/create endpoint
 
 \- Set "payment\_link" = "true" to create a payment link with default **payment\_link\_configs** configs set in business profile update mentioned in Step 1
 
 \- You can also pass the "session\_expiry" field in seconds to indicate the expiry of the payment link. By default it is 900 seconds (15 minutes)
 
 ```
-curl --location 'https://sandbox.hyperswitch.io/payments' \
+curl --location 'https://sandbox.superstream.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: YOUR_API_KEY' \
@@ -66,7 +62,7 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
     "currency": "USD",
     "confirm": false,
     "customer_id": "cus_123",
-    "return_url": "https://hyperswitch.io",
+    "return_url": "https://superstream.io",
     "description": "For selling Tshirt",
     "payment_link": true,
     "session_expiry": 2592000
@@ -75,9 +71,9 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 #### 3. Customizing a Payment link during creation:
 
-You can also customize a specific payment link by including the **payment\_link\_config object** while creating a link during [payments/create](https://api-reference.hyperswitch.io/api-reference/payments/payments--create) call as well. Except for domain\_name field from the same object in business\_profile/update, you could customize the remaining fields.
+You can also customize a specific payment link by including the **payment\_link\_config object** while creating a link during payments/create call as well. Except for domain\_name field from the same object in business\_profile/update, you could customize the remaining fields.
 
-<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payments' \
+<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.superstream.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: YOUR_API_KEY' \
@@ -86,7 +82,7 @@ You can also customize a specific payment link by including the **payment\_link\
     "currency": "USD",
     "confirm": false,
     "customer_id": "cus_123",
-    "return_url": "https://hyperswitch.io",
+    "return_url": "https://superstream.io",
     "description": "For selling Tshirt",
     "payment_link": true,
     "session_expiry": 2592000,
@@ -115,10 +111,10 @@ After you have setup custom domain in your cloud, you need to get respective Goo
 
 > Your DNS provider may be the same as your domain registrar, but it's possible they are different entities.
 
-> If you're unsure about your DNS provider, you can search for your domain's nameservers using the following command, replacing "hyperswitch.com" with your own domain:
+> If you're unsure about your DNS provider, you can search for your domain's nameservers using the following command, replacing "superstream.com" with your own domain:
 
 ```shell
-$ nslookup -querytype=NS hyperswitch.com
+$ nslookup -querytype=NS superstream.com
 ```
 
 > You’ll see a list of name servers for your domain in the output.
@@ -137,11 +133,11 @@ Step 2: Locate the page to manage the DNS for your domain
 
 Step 3: Create CNAME record
 
-> In your DNS control panel, create a new record that associates your chosen subdomain with 'hyperswitch payment link'. Your DNS provider will typically prompt you to specify the record type, name, value, and TTL (Time To Live) or expiration when adding a new record.
+> In your DNS control panel, create a new record that associates your chosen subdomain with 'superstream payment link'. Your DNS provider will typically prompt you to specify the record type, name, value, and TTL (Time To Live) or expiration when adding a new record.
 
 Enter the following values and save the new DNS record.
 
-> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.hyperswitch.io` | This is what the new subdomain record points to–in this case, Hyperswitch .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
+> \| FIELD | INSTRUCTIONS | DESCRIPTION | |----------|----------|----------| | Type | Select `CNAME` from the dropdown | What kind of DNS record this is. | | Name | if your custom domain is `paymentlink.xyz.com`, enter `paymentlink`| For CNAME records, this field is the first part of your subdomain (the part leading up to the first period).| | Value |Enter `sandbox.superstream.io` | This is what the new subdomain record points to–in this case, Superstream .Some providers may expect a trailing period (.) after the CNAME value. Make sure to verify that your CNAME value matches the format your provider expects. | | TTL/Expiry | Enter `300` | An expiration of 5 minutes (300 seconds) is OK. Your DNS provider might not allow you to change the TTL value. If this field is missing or you can’t change it, it’s safe to ignore this part of the configuration. |
 
 Step 4: Create your TXT record
 
@@ -166,7 +162,7 @@ $ nslookup -querytype=CNAME paymentlink.xyz.com
 your should get a output like this
 
 ```shell
-<your subdomain> 	canonical name = sandbox.hyperswitch.io.
+<your subdomain> 	canonical name = sandbox.superstream.io.
 ```
 
 Once you observe the output, proceed to the next step.
@@ -191,7 +187,7 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 > Upon completing this step, your DNS records will be configured.
 
-* Now that you've established and verified your DNS records, Hyperswitch proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
+* Now that you've established and verified your DNS records, Superstream proceeds to verify the connection and provision your domain on our end. You will receive an email from us once the domain is ready for you to enable it.
 
 ### FAQ
 
@@ -201,13 +197,11 @@ _acme-challenge.<your domain>   text = "<your unique TXT record value>"
 
 Yes. Your custom domain can be included in the default payment\_link\_config object as part of the business profile update.
 
-This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-1k6cz4lee-SAJzhz6bjmpp4jZCDOtOIg) to test this feature out with your custom domain.
-
 </details>
 
 <details>
 
-<summary>Can I configure Payment links through Hyperswitch Control centre?</summary>
+<summary>Can I configure Payment links through Superstream Control centre?</summary>
 
 Currently, the Control centre's capability to create payment links is under development and will be available by Q1'24.
 
@@ -217,7 +211,7 @@ Currently, the Control centre's capability to create payment links is under deve
 
 <summary>Can I create a static payment link which can be used across users?</summary>
 
-No, at the moment we do not support creation of static payment links ([request for feature](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests))
+No, at the moment we do not support creation of static payment links.
 
 </details>
 
@@ -233,6 +227,6 @@ The payment link is valid for 15-minutes by default. However you can increase th
 
 <summary>How can I send Payment links via Emails?</summary>
 
-Hyperswitch supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
+Superstream supports generation of the payment link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payment links to the emails being sent
 
 </details>

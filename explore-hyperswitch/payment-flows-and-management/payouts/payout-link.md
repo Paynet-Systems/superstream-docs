@@ -17,16 +17,14 @@ Introducing Payout Links - Make sending out money to beneficiaries, simple and e
 * Online gaming - Distribute prize money to players.
 * NGOs & Political Organisations - Reimburse field agents and volunteers.
 
-## How to configure Payout links through Hyperswitch API?
+## How to configure Payout links through Superstream API?
 
 ### Prerequisites
 
-* Create a Hyperswitch account via the [dashboard](https://app.hyperswitch.io/register) and create a profile ([read more](../../../features/payment-flows-and-management/account-management/multiple-accounts-and-profiles.md))
+* Create a Superstream account via the dashboard and create a profile.
 * Add a payout processor to your account
 
 ### Using Payout links
-
-> Note: Domain name might vary based on the testing and production environment.
 
 > Info: Payout links are secure by nature and should only be opened within an iframe of whitelisted domains in production. For ease of access, these links can be used in a test mode (for non production env) which removes the necessity of configuring whitelisted domains and loading these links within an iframe.
 
@@ -37,7 +35,7 @@ There are a couple of ways for using payout links.
 * Serving links from a custom domain
 * **\[TEST MODE]** Opening non-iframed links
 
-#### 1. Update [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) with a default payout\_link\_config by passing the below object in the request body
+#### 1. Update business profile with a default payout\_link\_config by passing the below object in the request body
 
 ```jsonc
 "payout_link_config": {
@@ -47,10 +45,10 @@ There are a couple of ways for using payout links.
 
   // (optional) Custom logo for your company.
   // Can be any hosted image URL.
-  "logo": "https://hyperswitch.io/favicon.ico",
+  "logo": "https://superstream.io/favicon.ico",
 
   // (optional) Name of your company.
-  "merchant_name": "HyperSwitch",
+  "merchant_name": "Superstream",
 
   // (required in production) A list of domain glob patterns.
   // This is used as validation when payout link render request is received, and also helps block XSS on client.
@@ -64,14 +62,14 @@ There are a couple of ways for using payout links.
 
 > Note: It is recommended to set `payout_test_mode` to true for quickly testing the payout links. Alternatively, `test_mode` can be sent in the individual payout link's create request.
 
-#### 2. Create a default payout link using [create payouts](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create) endpoint
+#### 2. Create a default payout link using create payouts endpoint
 
 > This creates a default payout link using the payout link config that was configured for the profile. In case payout config is not configured and not passed during create request, a default set of UI config is used.
 
 * Set `payout_link` to true
 
 ```shell
-curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
+curl --location 'https://sandbox.superstream.io/payouts/create' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: YOUR_API_KEY' \
@@ -107,13 +105,11 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 ```
 
-<figure><img src="../../../.gitbook/assets/payout-link-default.png" alt=""><figcaption><p>Default payout link opened in an iframe hosted locally</p></figcaption></figure>
-
 #### 3. Customizing a payout link during creation
 
-> Each payout link can be configured inidividually during [payout creation](https://api-reference.hyperswitch.io/api-reference/payouts/payouts--create), by including the `payout_link_config` object. UI config and access control (test\_mode) can be specified during creation. However, `domain_name` is always configured at a profile level.
+> Each payout link can be configured individually during payout creation, by including the `payout_link_config` object. UI config and access control (test\_mode) can be specified during creation. However, `domain_name` is always configured at a profile level.
 
-<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
+<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.superstream.io/payouts/create' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: YOUR_API_KEY' \
@@ -122,7 +118,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "currency": "USD",
     "confirm": false,
     "customer_id": "cus_123",
-    "return_url": "https://hyperswitch.io",
+    "return_url": "https://superstream.io",
     "description": "Cashback from RetroRecords",
     "payout_link": true,
     "billing": {
@@ -151,17 +147,9 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 </code></pre>
 
-<figure><img src="../../../.gitbook/assets/payout-link-custom.png" alt=""><figcaption><p>Customized payout link opened in an iframe hosted locally</p></figcaption></figure>
-
-#### 4. Opening non-iframed links
-
-> Note: This feature is available only in non-production environment. This essentially bypasses the server side and client side validations which are in place for making sure links are only opened within an iframe of a whitelisted domain.
-
-> Note: This can be achieved by either setting this behaviour at the business profile level, or can be set in individual link create requests.
-
 **Setting at business profile level**
 
-* Update `payout_link_config` in [business profile](https://api-reference.hyperswitch.io/api-reference/business-profile/business-profile--update) to set `payout_test_mode`
+* Update `payout_link_config` in business profile to set `payout_test_mode`
 
 ```jsonc
 "payout_link_config": {
@@ -175,7 +163,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 * Set `test_mode` during payout link creation
 
-<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
+<pre class="language-markup"><code class="lang-markup">curl --location 'https://sandbox.superstream.io/payouts/create' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: YOUR_API_KEY' \
@@ -184,8 +172,8 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
     "currency": "USD",
     "confirm": false,
     "customer_id": "cus_123",
-    "return_url": "https://hyperswitch.io",
-    "description": "Rewards from HyperSwitch",
+    "return_url": "https://superstream.io",
+    "description": "Rewards from Superstream",
     "payout_link": true,
     "billing": {
         "address": {
@@ -211,8 +199,6 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 }'
 </code></pre>
 
-<figure><img src="../../../.gitbook/assets/payout-link-non-iframed.png" alt=""><figcaption><p>Payout link opened in a browser tab in test mode</p></figcaption></figure>
-
 ## FAQ
 
 <details>
@@ -221,7 +207,7 @@ curl --location 'https://sandbox.hyperswitch.io/payouts/create' \
 
 Yes. Your custom domain can be included in the default payout\_link\_config object as part of the business profile update.
 
-This involves adding CNAME records and TLS certificates which ends up being a slightly complex process. Please reach out to our [Support](https://join.slack.com/t/hyperswitch-io/shared\_invite/zt-2awm23agh-p\_G5xNpziv6yAiedTkkqLg) to test this feature out with your custom domain.
+This involves adding CNAME records and TLS certificates which ends up being a slightly complex process.
 
 </details>
 
@@ -245,6 +231,6 @@ The payout link is valid for 15 minutes by default. However you can increase the
 
 <summary>How can I send Payout links via Emails?</summary>
 
-Hyperswitch supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
+Superstream supports generation of the payout link. We are not integrated with any email servers. You'll need to have a mail server integration at your end and ingest the payout links to the emails being sent.
 
 </details>

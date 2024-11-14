@@ -7,13 +7,11 @@ icon: sack-dollar
 
 # Manual Capture
 
-{% embed url="https://youtu.be/XtOMZVhvLwQ" %}
-
 ## What is Manual Capture?
 
-In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Hyperswitch we term this the '**Automatic Capture**' flow.&#x20;
+In most online payments use-cases, a merchant would want to capture the funds from their customers' accounts in one-step after the issuer authorizes the payment. This is called '**one-step'** payments flow and at Superstream we term this the '**Automatic Capture**' flow.&#x20;
 
-But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Hyperswitch, we call this the '**Manual Capture'** flow.
+But in some cases, merchants would like to place a hold on the customer's funds post authorization so that they can capture the funds at a later time once they deliver the goods and services. This is called the '**two-step**' flow or '**Auth and Capture**' flow in general payments parlance. Here at Superstream, we call this the '**Manual Capture'** flow.
 
 ## **How to do Manual Capture?**
 
@@ -24,7 +22,7 @@ The 'capture\_method' field determines the type of capture for a particular paym
 **Sample curl:**
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/payments' \
+curl --location 'https://sandbox.superstream.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: <your_api_key>' \
@@ -59,7 +57,7 @@ Confirm the payment after collecting the payment\_method details from your custo
 **Sample curl:**
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/payments/<original_payment_id>/confirm' \
+curl --location 'https://sandbox.superstream.io/payments/<original_payment_id>/confirm' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: <your_publishable_key>' \
@@ -87,7 +85,7 @@ After delivering the goods and services, capture the payment by passing the `pay
 **Sample curl:**
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/payments/pay_At7O43TJJZyP7OmrcdQD/capture' \
+curl --location 'https://sandbox.superstream.io/payments/pay_At7O43TJJZyP7OmrcdQD/capture' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'api-key: <your_api_key>' \

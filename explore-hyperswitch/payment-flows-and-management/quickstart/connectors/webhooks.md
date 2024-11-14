@@ -1,15 +1,15 @@
 ---
-description: Configure outgoing webhooks from Hyperswitch
+description: Configure outgoing webhooks from Superstream
 icon: anchor
 ---
 
 # Webhooks
 
 {% hint style="info" %}
-This section covers how you can set up your outgoing webhooks from Hyperswitch
+This section covers how you can set up your outgoing webhooks from Superstream
 {% endhint %}
 
-Webhooks are HTTP-based real-time push notifications that Hyperswitch would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
+Webhooks are HTTP-based real-time push notifications that Superstream would use for instant status communication to your server. Webhooks are vital in payments for the following reasons:
 
 * Preventing merchants from losing business due to delayed status communication (say, in case of flight or movie reservations where there is a need for instant payment confirmation).
 * Prevent payment reconciliation issues where payments change from "Failed" to "Succeeded".
@@ -19,28 +19,26 @@ Webhooks are HTTP-based real-time push notifications that Hyperswitch would use 
 
 #### Create an endpoint on your server
 
-You would need to set up a dedicated HTTPS or HTTP endpoint on your server with a URL as a webhook listener that will receive push notifications in the form of a POST request with JSON payload from the Hyperswitch server.
+You would need to set up a dedicated HTTPS or HTTP endpoint on your server with a URL as a webhook listener that will receive push notifications in the form of a POST request with JSON payload from the Superstream server.
 
-#### Configure your webhook endpoint on Hyperswitch Dashboard
+#### Configure your webhook endpoint on Superstream Dashboard
 
-Configure the above endpoint on your Hyperswitch dashboard under Developer -> Payment Settings and select the business profile. Use the Webhook Setup section to configure webhook details.
+Configure the above endpoint on your Superstream dashboard under Developer -> Payment Settings and select the business profile. Use the Webhook Setup section to configure webhook details.
 
 #### Add webhook custom HTTP headers
 
-In case a merchant wants to set custom headers for sending data to a specified webhook endpoint, these custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Update your webhook custom HTTP headers as shown below (you must provide a webhook URL to set custom HTTP headers).
+In case a merchant wants to set custom headers for sending data to a specified webhook endpoint, these custom headers allow the receiving application to verify the webhook requests and reject any that do not include them. Update your webhook custom HTTP headers (you must provide a webhook URL to set custom HTTP headers).
 
-<figure><img src="../../../../.gitbook/assets/Webhook-custom-HTTP-headers.png" alt=""><figcaption></figcaption></figure>
+#### Update Superstream’s webhook endpoints on your connector Dashboard
 
-#### Update Hyperswitch’s webhook endpoints on your connector Dashboard
+In order for Superstream to receive updates from the connectors you have selected, you would need to update Superstream’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
 
-In order for Hyperswitch to receive updates from the connectors you have selected, you would need to update Hyperswitch’s corresponding endpoints on your respective connector dashboard instead of your webhook endpoints.
-
-Hyperswitch's webhook endpoint format is as specified below, or you can obtain the endpoint from the control center under the Processors tab.
+Superstream's webhook endpoint format is as specified below, or you can obtain the endpoint from the control center under the Processors tab.
 
 | Environment | Webhook Endpoint                                                          |
-| ----------- | ------------------------------------------------------------------------- |
-| Sandbox     | sandbox.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}` |
-| Production  | api.hyperswitch.io/webhooks/`{merchant_id}`/`{merchant_connector_id}`     |
+| ----------- |---------------------------------------------------------------------------|
+| Sandbox     | sandbox.sSuperstreamSuperstreamSuperstreamSuperstreamSuperstreamSuperstreamuperstream.io/webhooks/`{merchant_id}`/`{merchant_connector_id}` |
+| Production  | api.superstream.io/webhooks/`{merchant_id}`/`{merchant_connector_id}`     |
 
 ### Handling Webhooks
 
@@ -64,8 +62,6 @@ Hyperswitch's webhook endpoint format is as specified below, or you can obtain t
   17. `mandate_active`
   18. `mandate_revoked`
 
-Click [**here**](https://api-reference.hyperswitch.io/api-reference/schemas/outgoing--webhook) to see the webhook payload your endpoint would need to parse for each of the above events
-
 ### Webhook Signature Verification
 
 While creating a business profile, you can specify a secret key in the `payments_response_hash_key` field, which will be used for signing webhook deliveries. If not specified, a 64-character long randomized key with high entropy will be generated for you. Ensure that you store the secret key in a secure location that your server can access.
@@ -88,9 +84,9 @@ To validate the webhook’s authenticity:
 
 #### Troubleshooting Signature Verification Failures
 
-If you are sure that the payload is from Hyperswitch but the signature verification fails:
+If you are sure that the payload is from Superstream but the signature verification fails:
 
-* Make sure you are using the correct header. Hyperswitch recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
+* Make sure you are using the correct header. Superstream recommends that you use the `x-webhook-signature-512` header, which uses the HMAC-SHA512 algorithm. If your machine does't support HMAC-SHA256, you can use `x-webhook-signature-256` header, which uses the HMAC-SHA256 algorithm.
 * Make sure you are using the correct algorithm. If you are using the `x-webhook-signature-256` header , you should use the HMAC-SHA256 algorithm.
 
 <details>
@@ -103,7 +99,7 @@ SHA-512 is a robust cryptographic hash function designed for security. It genera
 
 ### Webhook Delivery Behavior
 
-To consider a webhook delivery as successful, Hyperswitch expects the HTTP status code to be `2XX` from your server. If Hyperswitch doesn't receive a `2XX` status code, the delivery of the webhook is retried with an increasing delay over the next 24 hours.
+To consider a webhook delivery as successful, Superstream expects the HTTP status code to be `2XX` from your server. If Superstream doesn't receive a `2XX` status code, the delivery of the webhook is retried with an increasing delay over the next 24 hours.
 
 The intervals at which webhooks will be retried are:
 
@@ -130,9 +126,9 @@ For example, your application could do the following for each webhook received:
 
 #### Handling Out-of-order Deliveries
 
-Hyperswitch may deliver webhooks to your application in any order. This could be due to network delays or webhook delivery failures. However, you can handle this by examining the `updated` field of the resource sent in the webhook request body. For every change made to a specific resource, the `updated` field for the resource will be updated with the timestamp at which the update happened, and thus, the time at which the original webhook was triggered.
+Superstream may deliver webhooks to your application in any order. This could be due to network delays or webhook delivery failures. However, you can handle this by examining the `updated` field of the resource sent in the webhook request body. For every change made to a specific resource, the `updated` field for the resource will be updated with the timestamp at which the update happened, and thus, the time at which the original webhook was triggered.
 
-For example, if you wish to sync resource changes from Hyperswitch to your application, you could:
+For example, if you wish to sync resource changes from Superstream to your application, you could:
 
 1. Obtain the value (`timestamp1`) of the `updated` field of the resource in the webhook request body.
 2. Obtain the value (`timestamp2`) of the `updated` field of the resource stored on your side.

@@ -9,7 +9,7 @@ icon: repeat
 This sections deals with the various ways in which you can save a payment method and how to use them in recurring payments
 {% endhint %}
 
-Hyperswitch supports the following ways of saving a payment method used in a successful payment:
+Superstream supports the following ways of saving a payment method used in a successful payment:
 
 1. Saving for future customer on-session payments (COF-CIT)
 2. Saving for future customer off-session payments (MIT)
@@ -43,12 +43,6 @@ For saving a customer's payment method used in a successful transaction:
     }
 ```
 
-{% hint style="info" %}
-If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
-
-**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
-{% endhint %}
-
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-04-18 at 12.49.35 PM.png" alt="" width="375"><figcaption><p>The customer's consent to save their card is expressed through this checkbox</p></figcaption></figure>
 
 ***
@@ -80,18 +74,12 @@ Based on the payment processors support, this functionality is also available fo
     }
 ```
 
-{% hint style="info" %}
-If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the `/payments/:id:/confirm` request on the basis of customer clicking the save card radio button
-
-**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
-{% endhint %}
-
 Retrieve the `payment_method_id` that was created against the above payment by retrieving the payment. You will get the payment\_method\_id in the response. Store this ID for making subsequent MIT payments.
 
 ```bash
-curl --location 'https://sandbox.hyperswitch.io/payments/<pass the payment_id>' \
+curl --location 'https://sandbox.superstream.io/payments/<pass the payment_id>' \
 --header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here>' \
+--header 'api-key: <enter your Superstream API key here>' \
 ```
 
 ***
@@ -109,11 +97,11 @@ Once a customer's payment method is saved for MIT payments you can start chargin
 
 You would be using the same `payment_method_id` that was returned in the `/payments/:id:/retrieve` response for the initial transaction where the customer authorized saving for future use.
 
-To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://api-reference.hyperswitch.io/api-reference/payment-methods/list-payment-methods-for-a-customer) API.
+To get all the payment methods saved for a customer use the[ List Customer Payment Methods](https://app.theneo.io/paynet/superstream/customers/payment_methods/list-customer-saved-payment-methods-for-a-payment) API.
 
 ```bash
 curl --request GET \
-  --url https://sandbox.hyperswitch.io/customers/{customer_id}/payment_methods \
+  --url https://sandbox.superstream.io/customers/{customer_id}/payment_methods \
   --header 'api-key: <api-key>'
 ```
 
@@ -152,16 +140,12 @@ Straight-through algorithm to be passed in the `/payments` request
     }
 ```
 
-If you would like additional processors to support this flow or want to enable volume-based and priority-based routing algorithms, please submit a feature request [here](https://github.com/juspay/hyperswitch/discussions/new?category=ideas-feature-requests).
-
 ***
 
 ## FAQ:
 
-### **1. I want to onboard my customers by collecting their card details, authenticate and store for future MIT payments without charging them now. How can I vault a payment method with Hyperswitch?**
+### **1. I want to onboard my customers by collecting their card details, authenticate and store for future MIT payments without charging them now. How can I vault a payment method with Superstream?**
 
-Hyperswitch allows you to vault a payment method without charging the customer by using the[ Zero Amount Authorization ](../subscriptions/zero-amount-authorization-1.md)flow where you can authenticate and store your customer's card. Later you can make MIT payments using this payment method.
+Superstream allows you to vault a payment method without charging the customer by using the[ Zero Amount Authorization ](../subscriptions/zero-amount-authorization-1.md)flow where you can authenticate and store your customer's card. Later you can make MIT payments using this payment method.
 
-This is specifically useful when you have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.\
-\
-Refer to this page to see how to use it - [Link](../subscriptions/zero-amount-authorization-1.md)
+This is specifically useful when you have a separate Add Payment Method flow/onboarding journey where you don't want to debit the customer but store and authenticate their payment method.

@@ -5,7 +5,7 @@ icon: flux-capacitor
 # Intelligent Routing
 
 {% hint style="info" %}
-This feature is in beta for North American and European markets. To gain access please drop an email to biz@hyperswitch.io
+This feature is in beta for North American and European markets. To gain access please drop an email to biz@superstream.io
 {% endhint %}
 
 ## What is Intelligent Routing?&#x20;
@@ -15,8 +15,6 @@ Intelligent Routing is a smart payment routing system that helps businesses choo
 Unlike static routing, which follows fixed rules, Intelligent Routing uses up-to-the-minute data—such as success rates, past transaction patterns, and processor issues. By combining past data with real-time insights, it picks the best processor for each payment.
 
 This automation saves businesses from manually updating rules, adapting automatically to current conditions for smoother, more efficient payment processing.
-
-<figure><img src="../../../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
 ## How Intelligent Routing Benefits Businesses?
 
